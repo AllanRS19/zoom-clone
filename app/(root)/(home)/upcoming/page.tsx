@@ -1,3 +1,5 @@
+import CallList from "@/components/CallList";
+
 const Upcoming = () => {
   return (
     <section className="flex size-full flex-col gap-10 text-white">
@@ -5,7 +7,7 @@ const Upcoming = () => {
         Upcoming
       </h1>
 
-      
+      <CallList type="upcoming" />
     </section>
   )
 }
