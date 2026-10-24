@@ -30,7 +30,7 @@ A full stack, real-time video calling app with built-in recording and user authe
 ## How It Works
 
 1. Clerk authenticates the user and protects routes from `middleware.ts`.
-2. A server action generates a Stream token for the signed-in user using the Stream Node SDK. [confirm the name and location in `actions/`]
+2. A server action generates a Stream token for the signed-in user using the Stream Node SDK.
 3. The client connects to Stream through the React SDK and creates or joins a call.
 4. Recordings are stored by Stream and listed so users can play them back later.
 
