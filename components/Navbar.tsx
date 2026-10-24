@@ -20,7 +20,9 @@ const Navbar = () => {
       <div className="flex flex-between gap-5">
         {/* Cleark - User Management */}
           <SignedIn>
-            <UserButton />
+            <UserButton 
+              afterSignOutUrl="/sign-in"
+            />
           </SignedIn>
         <MobileNav />
 

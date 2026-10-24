@@ -1,55 +1,55 @@
-# Zoom Clone — Aplicación de videollamadas
+# Zoom Clone — Video Calling App
 
-Aplicación full stack de videollamadas en tiempo real con grabación integrada y autenticación de usuarios, construida con Next.js 14, Stream y Clerk.
+A full stack, real-time video calling app with built-in recording and user authentication, built with Next.js 14, Stream SDK, and Clerk.
 
-**Demo:** https://zoom-clone-lyart.vercel.app
+**Live demo:** https://meetup-allanrs19.vercel.app
 
-![Captura de la aplicación](./public/screenshot.png)
-<!-- Agrega aquí una captura de la pantalla principal y, si puedes, un GIF de una llamada -->
+![App screenshot](./public/app-screenshot.png)
+<!-- Add a screenshot of the main screen here and, if possible, a GIF of a call in progress -->
 
-## Funcionalidades
+## Features
 
-- Videollamadas en tiempo real con baja latencia.
-- Grabación integrada: captura, almacenamiento y reproducción de sesiones anteriores.
-- Autenticación y manejo de sesiones con Clerk; rutas protegidas con middleware.
-- [Reuniones instantáneas y programadas con selector de fecha y hora.]
-- [Sala personal y enlaces para invitar a otros participantes.]
-- [Listas de reuniones próximas y anteriores.]
-- Interfaz responsive con Tailwind CSS y componentes de shadcn/ui.
+- Real-time video calls with low latency.
+- Built-in recording: capture, store, and play back previous sessions.
+- Authentication and session management with Clerk, with routes protected through middleware.
+- Instant and scheduled meetings.
+- Personal room and shareable links to invite participants.
+- Upcoming and previous meetings lists.
+- Responsive UI built with Tailwind CSS and shadcn/ui components.
 
-## Tecnologías
+## Tech Stack
 
-| Área | Herramientas |
+| Area | Tools |
 | --- | --- |
 | Framework | Next.js 14 (App Router), React 18, TypeScript |
-| Video en tiempo real | Stream Video React SDK, Stream Node SDK |
-| Autenticación | Clerk |
-| Estilos y UI | Tailwind CSS, shadcn/ui, Radix UI, lucide-react |
-| Despliegue | Vercel |
+| Real-time video | Stream Video React SDK, Stream Node SDK |
+| Authentication | Clerk |
+| Styling and UI | Tailwind CSS, shadcn/ui, Radix UI, lucide-react |
+| Deployment | Vercel |
 
-## Cómo funciona
+## How It Works
 
-1. Clerk autentica al usuario y protege las rutas desde `middleware.ts`.
-2. Una acción de servidor genera el token de Stream para el usuario autenticado, usando el SDK de Node de Stream. [confirmar nombre y ubicación en `actions/`]
-3. El cliente se conecta a Stream con el SDK de React y crea o se une a la llamada.
-4. Las grabaciones se guardan en Stream y se listan para reproducirlas después.
+1. Clerk authenticates the user and protects routes from `middleware.ts`.
+2. A server action generates a Stream token for the signed-in user using the Stream Node SDK. [confirm the name and location in `actions/`]
+3. The client connects to Stream through the React SDK and creates or joins a call.
+4. Recordings are stored by Stream and listed so users can play them back later.
 
-## Estructura del proyecto
+## Project Structure
 
 ```
-actions/      Acciones de servidor (por ejemplo, generación de tokens)
-app/          Rutas y páginas (App Router)
-components/   Componentes de interfaz y de reuniones
-constants/    Constantes y datos de navegación
-hooks/        Hooks personalizados
-lib/          Utilidades
-providers/    Proveedores de contexto (cliente de Stream)
-middleware.ts Protección de rutas con Clerk
+actions/      Server actions (e.g., token generation)
+app/          Routes and pages (App Router)
+components/   UI and meeting components
+constants/    Constants and navigation data
+hooks/        Custom hooks
+lib/          Utilities
+providers/    Context providers (Stream client)
+middleware.ts Route protection with Clerk
 ```
 
-## Cómo ejecutarlo en local
+## Getting Started
 
-**Requisitos:** Node.js 18 o superior, y cuentas gratuitas en [Clerk](https://clerk.com) y [Stream](https://getstream.io).
+**Prerequisites:** Node.js 18 or later, and free accounts on [Clerk](https://clerk.com) and [Stream](https://getstream.io).
 
 ```bash
 git clone https://github.com/AllanRS19/zoom-clone.git
@@ -57,7 +57,7 @@ cd zoom-clone
 npm install
 ```
 
-Crea un archivo `.env.local` en la raíz:
+Create a `.env.local` file in the project root:
 
 ```env
 # Clerk
@@ -70,28 +70,32 @@ NEXT_PUBLIC_CLERK_SIGN_UP_URL=/sign-up
 NEXT_PUBLIC_STREAM_API_KEY=
 STREAM_SECRET_KEY=
 
-# URL base de la app
+# App base URL
 NEXT_PUBLIC_BASE_URL=http://localhost:3000
 ```
-<!-- Confirma estos nombres buscando "process.env" en tu código -->
+<!-- Confirm these variable names by searching for "process.env" in your code -->
 
-Inicia el servidor de desarrollo:
+Start the development server:
 
 ```bash
 npm run dev
 ```
 
-Abre [http://localhost:3000](http://localhost:3000).
+Open [http://localhost:3000](http://localhost:3000) in your browser.
 
 ## Scripts
 
-| Comando | Descripción |
+| Command | Description |
 | --- | --- |
-| `npm run dev` | Servidor de desarrollo |
-| `npm run build` | Build de producción |
-| `npm run start` | Ejecuta el build de producción |
-| `npm run lint` | Revisa el código con ESLint |
+| `npm run dev` | Start the development server |
+| `npm run build` | Create a production build |
+| `npm run start` | Run the production build |
+| `npm run lint` | Lint the code with ESLint |
 
-## Despliegue
+## Deployment
 
-Desplegado en Vercel. Para desplegar tu propia copia, importa el repo en Vercel y agrega las variables de entorno de arriba.
+Deployed on Vercel. To deploy your own copy, import the repo into Vercel and add the environment variables listed above.
+
+## Author
+
+**Allan Romero Solís** — [LinkedIn](https://www.linkedin.com/in/allan-romero/) · [Portfolio](https://allanromero.dev) · [GitHub](https://github.com/AllanRS19)
